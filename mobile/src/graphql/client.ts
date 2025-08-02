@@ -11,7 +11,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 // Create the http link
 // use ngrok or localtunnel to get a https link to the backend
 const httpLink = createHttpLink({
-	uri: "https://dd807329cb7d.ngrok-free.app/graphql",
+	uri: "http://3.26.213.105:4000/graphql",
 });
 
 // Add auth token to requests

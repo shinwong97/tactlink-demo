@@ -12,7 +12,7 @@ import './index.css'
 
 // Create HTTP link to our GraphQL backend
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000/graphql', // Update this to your backend URL
+  uri: 'http://3.26.213.105:4000/graphql', // Update this to your backend URL
 })
 
 // Add auth token to requests if available
