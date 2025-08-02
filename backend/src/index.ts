@@ -10,11 +10,11 @@ import express from "express";
 const app = express();
 
 // Health check endpoint
-app.get('/health', (req, res) => {
-	res.status(200).json({ 
-		status: 'healthy', 
+app.get("/health", (req, res) => {
+	res.status(200).json({
+		status: "healthy",
 		timestamp: new Date().toISOString(),
-		service: 'tactlink-graphql-backend'
+		service: "tactlink-graphql-backend",
 	});
 });
 
@@ -40,12 +40,12 @@ const server = new ApolloServer({
 	resolvers,
 	formatError: (error) => {
 		// Log errors in production
-		console.error('GraphQL Error:', error);
+		console.error("GraphQL Error:", error);
 		return {
 			message: error.message,
 			extensions: {
-				code: error.extensions?.code || 'INTERNAL_SERVER_ERROR'
-			}
+				code: error.extensions?.code || "INTERNAL_SERVER_ERROR",
+			},
 		};
 	},
 });
@@ -56,4 +56,6 @@ const { url } = await startStandaloneServer(server, {
 });
 
 console.log(`🚀 GraphQL Server ready at: ${url}`);
-console.log(`🏥 Health check available at: http://localhost:${healthPort}/health`);
+console.log(
+	`🏥 Health check available at: http://localhost:${healthPort}/health`
+);
