@@ -33,7 +33,9 @@ const LoginForm: React.FC = () => {
         login(data.signup.token, data.signup.user)
       }
     } catch (err) {
-      setError(err.message || 'An error occurred')
+      const errorMessage =
+        err instanceof Error ? err.message : 'An error occurred'
+      setError(errorMessage)
     } finally {
       setLoading(false)
     }
