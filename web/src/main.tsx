@@ -12,7 +12,7 @@ import './index.css'
 
 // Create HTTP link to our GraphQL backend
 const httpLink = createHttpLink({
-  uri: 'http://3.26.213.105:4000/graphql', // Update this to your backend URL
+  uri: import.meta.env.DEV ? '/graphql' : '/api/graphql', // Use local proxy in dev, Vercel API in production
 })
 
 // Add auth token to requests if available
